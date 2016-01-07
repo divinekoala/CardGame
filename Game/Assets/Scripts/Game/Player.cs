@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This class holds the information of the Player and is useable by the Game to perform actions.
+/// This inherits from GamePiece.
+/// </summary>
 public class Player : GamePiece {
     private int maxhealth;
     private bool isHuman;

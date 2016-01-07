@@ -2,13 +2,20 @@
 using System.Collections;
 using System;
 
-public class BuffAttackEffect : Effect {
+/// <summary>
+/// Buff Effect to change the Attack value of a Creature Card.
+/// This inherits from the Effect class to get the values that this Effect require.
+/// </summary>
+public class ModifyAttackEffect : Effect {
 
-	public int durationInTurns { get; set; }
 	public int changeAttack { get; set; }
-	public int changeHealth { get; set; }
+
+	public ModifyAttackEffect (int changeAttack) {
+		this.changeAttack = changeAttack;
+	}
 
 	public override void ActivateEffect (GamePiece target) {
 		EffectCommands.BuffAttack (target, changeAttack);
 	}
 }
+	

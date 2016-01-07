@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This is the base class for all Effects.
+/// Provides values that are required by all Effects.
+/// </summary>
 public abstract class Effect  {
     private ValidTarget validTarget;
 	private ResolveTiming resolveTiming;
 	private TargetType targetType;
 
+	//Must be implemented in specific effect using EffectCommands
     public abstract void ActivateEffect(GamePiece target);
 
     public ValidTarget GetValidTarget () {

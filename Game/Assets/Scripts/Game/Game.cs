@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// This class controls the game.
+/// It handles interactions between other classes.
+/// </summary>
 public class Game {
     private Board board;
     private Player player1;
@@ -50,7 +54,7 @@ public class Game {
 				//Do Effect
 				List<Effect> effList = new List<Effect>();
 				foreach (CardEffectName cen in card.GetCardEffect()) {
-					Effect eff = EffectMap.effects[cen];
+					Effect eff = EffectDictionary.effects[cen];
 					effList.Add(eff);
 				}
 				//Get Targety stuff

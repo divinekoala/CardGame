@@ -3,7 +3,11 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class FollowerCard : Card {
+/// <summary>
+/// This is the class for all Creature cards.
+/// Inheriting from the Card class.
+/// </summary>
+public class CreatureCard : Card {
     public int attack { get; set; }
     public int health { get; set; }
 }

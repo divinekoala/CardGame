@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// This is class which wraps the Card class using composition to be used by the Game.
+/// This inherits from GamePiece.
+/// </summary>
 public class GameCard : GamePiece {
     private Card card;
 
@@ -16,8 +20,8 @@ public class GameCard : GamePiece {
         this.currentManaCost = card.manaCost;
         this.cardEffectName = card.cardEffectName;
 
-        if(card.cardType == CardType.Follower) {
-            FollowerCard convertedCard = card as FollowerCard;
+        if(card.cardType == CardType.Creature) {
+            CreatureCard convertedCard = card as CreatureCard;
             if(convertedCard != null) {
 				SetCurrentAttack(convertedCard.attack);
                 SetCurrentHealth(convertedCard.health);

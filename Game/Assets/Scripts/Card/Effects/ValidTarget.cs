@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This class allows Effects and Attack to find Valid Targets for thier Action.
+/// </summary>
 public class ValidTarget {
 
     public Target target { get; set; }

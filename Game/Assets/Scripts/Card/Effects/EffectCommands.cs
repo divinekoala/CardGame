@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Calls the functions that should be called when an Effect occurs.
+/// </summary>
 public static class EffectCommands {
 
     public static void BuffAttack(GamePiece target, int value) {

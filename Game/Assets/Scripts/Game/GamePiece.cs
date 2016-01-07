@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This is part of a wrapper class for cards while they are in play.
+/// This is the base class for all Cards on the board.
+/// Provides values that are required by all Cards on the board.
+/// </summary>
 public abstract class GamePiece {
 
     private int currentAttack;

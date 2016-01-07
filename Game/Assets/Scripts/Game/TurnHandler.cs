@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This class handles the turns, progression through each phase and through the game.
+/// This dictates what actions are able to be taken and what player is able to do them.
+/// </summary>
 public class TurnHandler {
 
 	private int gameTurn;

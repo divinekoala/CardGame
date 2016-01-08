@@ -1,10 +1,19 @@
-To-Do
+To-Do:
 
 - Refactor GamePiece and related wrapper classes to handle all CardTypes.
-- Create prototype UI Board with relavant information.
 - Create prototype UI for Cards and Player, with 'Action' buttons for relevant commands.
-- Split interactions the cards can make from hand and the board to separate classes.
+
 - Implement the ValidTarget class and related sub classes (Target & Conditional).
 - Creating targeting system based on the Card Effect and ValidTarget.
 - Decide on how to Implement a Creature Attack (as an Effect or as it's own function).
-- Refactor TurnHandler and reflect only valid 'Actions' with commands
+- Refactor TurnHandler and reflect only valid 'Actions' with commands.
+
+
+Doing:
+
+- Split interactions the cards can make from hand and the board to separate classes.
+
+
+Done:
+
+- Create prototype UI Board with relavant information.

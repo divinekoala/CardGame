@@ -10,4 +10,5 @@ using System.Collections.Generic;
 public class CreatureCard : Card {
     public int attack { get; set; }
     public int health { get; set; }
+	public bool isTapped { get; set; }
 }

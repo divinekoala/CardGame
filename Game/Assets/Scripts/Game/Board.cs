@@ -42,7 +42,8 @@ public class Board {
 			player2Board.Add(card);
 	}
 
-   	public void RemoveCardFromPlayer (GameCard card, bool isPlayer1) {
+	public void RemoveCardFromPlayer (GameCard card, bool isPlayer1) {
+		
    		if (isPlayer1)
    			player1Board.Remove(card);
    		else

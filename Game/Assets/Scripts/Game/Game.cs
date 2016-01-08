@@ -40,6 +40,9 @@ public class Game {
 			return player2;
 	}
 
+	/// <summary>
+	/// Starts the turn. and resets mana, cd and untaps cards
+	/// </summary>
 	public void StartTurn(){
 		Player cp = CurrentPlayer();
 		cp.StartTurnCardCoolDown();
@@ -47,28 +50,27 @@ public class Game {
 		turnHandler.NextPhase();
 	}
 
-	public void PlayCard(GameCard card) {
+	/// <summary>
+	/// Gets Card, checks to see if it is a valid play
+	/// Put the effects in the EffectHandler and Puts the card on the board.
+	/// </summary>
+	/// <param name="card">Card.</param>
+	public void PlayCard(HandCard card) {
 		Player cp = CurrentPlayer();
 		if(cp.CheckMana(card.GetCurrentManaCost())){
-			if (card.GetCardEffect().Count > 0){
-				//Do Effect
-				List<Effect> effList = new List<Effect>();
-				foreach (CardEffectName cen in card.GetCardEffect()) {
-					Effect eff = EffectDictionary.effects[cen];
-					effList.Add(eff);
+			if (card.Card.cardEffectName.Count > 0){
+				foreach (CardEffectName cen in card.Card.cardEffectName) {
+					effectHandler.RegisterCardEffect(cen);
 				}
-				//Get Targety stuff
-
-			} else
-				PutCardOnField(card, cp);
+			}
+				PutCardOnBoard(card, cp);
 		}
 	}
 
-	public void PutCardOnField (GameCard card, Player currentPlayer) {
-		currentPlayer.UseMana(card.GetCurrentManaCost());
+	//TOFIX
+	public void PutCardOnBoard (GameCard card, Player currentPlayer) {
+		currentPlayer.UseMana(.GetCurrentManaCost);
 		board.AddCardToPlayer(card, turnHandler.GetIsPlayer1Turn());
-		card.GoOnCooldown();
 	}
-
-
+		
 }

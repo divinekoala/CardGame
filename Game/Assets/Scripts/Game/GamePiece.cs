@@ -6,7 +6,7 @@ using System.Collections;
 /// This is the base class for all Cards on the board.
 /// Provides values that are required by all Cards on the board.
 /// </summary>
-public abstract class GamePiece {
+public abstract class GamePiece : MonoBehaviour{
 
     private int currentAttack;
     private int currentHealth;

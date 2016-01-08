@@ -2,7 +2,7 @@ To-Do:
 
 - Refactor GamePiece and related wrapper classes to handle all CardTypes.
 - Create prototype UI for Cards and Player, with 'Action' buttons for relevant commands.
-
+- implement deck and way to loaddeck int o game
 - Implement the ValidTarget class and related sub classes (Target & Conditional).
 - Creating targeting system based on the Card Effect and ValidTarget.
 - Decide on how to Implement a Creature Attack (as an Effect or as it's own function).

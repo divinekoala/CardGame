@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// This class holds the information of the Player and is useable by the Game to perform actions.
@@ -12,7 +12,9 @@ public class Player : GamePiece {
     private int currentMana;
     private int remainingMana;
 
-    public GameCard[] hand = new GameCard[6];
+	public GameObject CardPrefab;
+
+	public List<HandCard> hand = new List<HandCard>();
 
     public void UseMana(int cost) {
         if(remainingMana >= cost)
@@ -41,8 +43,20 @@ public class Player : GamePiece {
     }
 
 	public void StartTurnCardCoolDown() {
-		foreach (GameCard gc in hand){
-			gc.ModifyCurrentCooldown(-1);
+		foreach (HandCard hc in hand){
+			hc.ModifyCurrentCooldown(-1);
 		}
 	}
+
+	//TODO
+	public void PlayCardFromHand (HandCard handCard) {
+		hand.Remove(handCard);
+		CreateCard(handCard.Card);
+	}
+
+	//TODO
+	public void CreateCard (Card card) {
+		
+	}
+
 }

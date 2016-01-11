@@ -14,7 +14,7 @@ public class ModifyAttackEffect : Effect {
 		this.changeAttack = changeAttack;
 	}
 
-	public override void ActivateEffect (GamePiece target) {
+	public override void ActivateEffect (GameCard target) {
 		EffectCommands.BuffAttack (target, changeAttack);
 	}
 }

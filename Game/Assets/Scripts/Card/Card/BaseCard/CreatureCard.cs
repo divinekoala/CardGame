@@ -4,8 +4,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// This is the class for all Creature cards.
-/// Inheriting from the Card class.
+/// This is the base class for all Creature cards.
 /// </summary>
 public class CreatureCard : Card {
     public int attack { get; set; }

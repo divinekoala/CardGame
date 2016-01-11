@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class HandCard : MonoBehaviour {
 
@@ -52,5 +52,9 @@ public class HandCard : MonoBehaviour {
 
 	public void SetCurrentManaCost (int value) {
 		currentManaCost = value;
+	}
+
+	public List<CardEffectName> GetEffects () {
+		return card.cardEffectName;
 	}
 }

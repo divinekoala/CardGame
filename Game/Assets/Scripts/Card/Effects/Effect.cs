@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 
 /// <summary>
 /// This is the base class for all Effects.
@@ -11,7 +10,7 @@ public abstract class Effect  {
 	private TargetType targetType;
 
 	//Must be implemented in specific effect using EffectCommands
-    public abstract void ActivateEffect(GamePiece target);
+	public abstract void ActivateEffect(GameCard target);
 
     public ValidTarget GetValidTarget () {
     	return validTarget;

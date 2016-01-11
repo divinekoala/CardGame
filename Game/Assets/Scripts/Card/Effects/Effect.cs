@@ -10,7 +10,7 @@ public abstract class Effect  {
 	private TargetType targetType;
 
 	//Must be implemented in specific effect using EffectCommands
-	public abstract void ActivateEffect(GameCard target);
+	public abstract void ActivateEffect(GameCreature target);
 
     public ValidTarget GetValidTarget () {
     	return validTarget;

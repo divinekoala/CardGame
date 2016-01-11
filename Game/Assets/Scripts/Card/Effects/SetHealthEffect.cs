@@ -14,7 +14,7 @@ public class SetHealthEffect : Effect {
         this.newHealthValue = newHealthValue;
     }
 
-	public override void ActivateEffect(GameCard target) {
+	public override void ActivateEffect(GameCreature target) {
 		EffectCommands.SetHealth (target, newHealthValue);
     }
 }

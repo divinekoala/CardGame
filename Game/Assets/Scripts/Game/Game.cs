@@ -6,23 +6,18 @@ using System.Collections.Generic;
 /// It handles interactions between other classes.
 /// </summary>
 public class Game {
-    private Board board;
     private Player player1;
     private Player player2;
 
     private EffectHandler effectHandler;
 	private TurnHandler turnHandler;
 
-	public Game (Board board, Player p1, Player p2, EffectHandler effHandle, TurnHandler turnHandle) {
-		this.board = board;
+	public Game (Player p1, Player p2, EffectHandler effHandle, TurnHandler turnHandle) {
+
 		this.player1 = p1;
 		this.player2 = p2;
 		this.effectHandler = effHandle;
 		this.turnHandler = turnHandle;
-	}
-
-	public Board GetBoard(){
-		return board;
 	}
 
 	public Player GetPlayer1 () {
@@ -33,7 +28,7 @@ public class Game {
 		return player2;
 	}
 
-	public Player CurrentPlayer() {
+	public Player GetCurrentPlayer() {
 		if (turnHandler.GetIsPlayer1Turn())
 			return player1;
 		else 
@@ -44,38 +39,42 @@ public class Game {
 	/// Starts the turn. and resets mana, cd and untaps cards
 	/// </summary>
 	public void StartTurn(){
-		Player cp = CurrentPlayer();
+		Player cp = GetCurrentPlayer();
 		cp.StartTurnCardCoolDown();
 		cp.StartTurnMana();
 		turnHandler.NextPhase();
 	}
 
-	/// <summary>
-	/// Gets Card, checks to see if it is a valid play
-	/// Put the effects in the EffectHandler and Puts the card on the board.
-	/// </summary>
-	/// <param name="card">Card.</param>
-	public void PlayCard(HandCard card) {
-		Player cp = CurrentPlayer();
-		if(cp.CheckMana(card.GetCurrentManaCost())){
-			if (card.Card.cardEffectName.Count > 0){
-				foreach (CardEffectName cen in card.Card.cardEffectName) {
-					effectHandler.RegisterCardEffect(cen);
-				}
-			}
-				PutCardOnBoard(card, cp);
+	// Once validated plays card and passes on the effects
+	public void PlayCardFromHand (HandCard card, Player currentPlayer) {
+		// Check for Mana / Cooldown
+		// Use Mana
+		// Remove Card From Players Hand
+		// Create the card and Place on board
+		// Add effect to EffectHandler
+
+		if (ValidateCardPlay(card, currentPlayer)) {
+			currentPlayer.UseMana(card.GetCurrentManaCost());
+
+			currentPlayer.RemoveCardFromHand(card);
+			currentPlayer.AddToBoard(CreateCard(card));
+		}
+
+	}
+
+	// Checks if player has enough mana and card is not on cooldown
+	public bool ValidateCardPlay (HandCard card, Player currentPlayer) {
+		if (currentPlayer.CheckMana(card.GetCurrentManaCost()) && card.GetCurrentCooldown() == 0){
+			return true;
+		} else {
+			return false;
 		}
 	}
 
-	//TOFIX
-	public void PutCardOnBoard (HandCard card, Player currentPlayer) {
-		currentPlayer.UseMana(card.GetCurrentManaCost);
-		board.AddCardToPlayer(CreateCard(card), turnHandler.GetIsPlayer1Turn());
-	}
-
-	//TODO
-	public GameCard CreateCard (HandCard card) {
-
+	//Creates the GameCard as a GameObject
+	public GameCard CreateCard (HandCard card){
+		//ToDo
+		return new GameCard();
 	}
 		
 }

@@ -15,6 +15,7 @@ public class Player {
 	public GameObject CardPrefab;
 
 	public List<HandCard> hand = new List<HandCard>();
+	public List<GameCard> board = new List<GameCard>();
 
     public void UseMana(int cost) {
         if(remainingMana >= cost)
@@ -55,5 +56,18 @@ public class Player {
 	public void RemoveCardFromHand (HandCard card) {
 		hand.Remove(card);
 	}
+
+	public List<GameCard> GetBoard () {
+		return board;
+	}
+
+	public void AddToBoard (GameCard card) {
+		board.Add(card);
+	}
+
+	public void RemoveFromBoard (GameCard card) {
+		board.Remove(card);
+	}
+
 
 }

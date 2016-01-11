@@ -11,8 +11,11 @@ To-Do:
 
 Doing:
 
-- Split interactions the cards can make from hand and the board to separate classes.
+- Rework GamePiece and GameCard for to better represent a card on the board (Big)
 
+On-Hold:
+
+- Split interactions the cards can make from hand and the board to separate classes.
 
 Done:
 

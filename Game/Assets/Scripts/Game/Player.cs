@@ -48,15 +48,12 @@ public class Player : GamePiece {
 		}
 	}
 
-	//TODO
-	public void PlayCardFromHand (HandCard handCard) {
-		hand.Remove(handCard);
-		CreateCard(handCard.Card);
+	public void AddCardFromHand (HandCard card) {
+		hand.Add(card);
 	}
-
-	//TODO
-	public void CreateCard (Card card) {
 		
+	public void RemoveCardFromHand (HandCard card) {
+		hand.Remove(card);
 	}
 
 }

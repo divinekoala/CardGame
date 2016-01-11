@@ -68,9 +68,14 @@ public class Game {
 	}
 
 	//TOFIX
-	public void PutCardOnBoard (GameCard card, Player currentPlayer) {
-		currentPlayer.UseMana(.GetCurrentManaCost);
-		board.AddCardToPlayer(card, turnHandler.GetIsPlayer1Turn());
+	public void PutCardOnBoard (HandCard card, Player currentPlayer) {
+		currentPlayer.UseMana(card, card.GetCurrentManaCost);
+		board.AddCardToPlayer(CreateCard(card), turnHandler.GetIsPlayer1Turn());
+	}
+
+	//TODO
+	public GameCard CreateCard (HandCard card) {
+
 	}
 		
 }

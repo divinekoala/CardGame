@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// This class controls the game.
 /// It handles interactions between other classes.
 /// </summary>
-public class Game {
+public class Game : MonoBehaviour {
     private Player player1;
     private Player player2;
 
@@ -75,6 +75,11 @@ public class Game {
 	public GameCard CreateCard (HandCard card){
 		//ToDo
 		return new GameCard();
+	}
+
+	public void MoveCardToGraveyard (GameCard card, Player currentPlayer) {
+		currentPlayer.RemoveFromBoard(card);
+		currentPlayer.PutCardInGraveyard(card.card);
 	}
 		
 }

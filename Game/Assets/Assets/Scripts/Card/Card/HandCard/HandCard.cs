@@ -7,13 +7,13 @@ public class HandCard : MonoBehaviour {
 
 	private int currentCooldown;
 	private int remainingCooldown;
-
 	private int currentManaCost;
 
 	public HandCard (Card card) {
 		this.card = card;
 		this.currentCooldown = card.cooldown;
 		this.remainingCooldown = card.cooldown;
+		this.currentManaCost = card.manaCost;
 	}
 
 	public Card Card {

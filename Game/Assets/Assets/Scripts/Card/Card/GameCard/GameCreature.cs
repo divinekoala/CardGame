@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 /// <summary>
@@ -7,8 +8,18 @@ using System.Collections.Generic;
 /// </summary>
 public class GameCreature : GameCard, AttackAndHealth {
 
+	public Text AttackTxt;
+	public Text HealthTxt;
+
 	private int currentAttack;
 	private int currentHealth;
+
+	public GameCreature (CreatureCard card) {
+		this.card = card;
+		currentAttack = card.attack;
+		currentHealth = card.health;
+
+	}
 
 	public void DoAttack () {
 		//ToDo
@@ -40,5 +51,18 @@ public class GameCreature : GameCard, AttackAndHealth {
 
 	public void SetCurrentHealth(int value) {
 		currentHealth = value;
+	}
+
+	public void Start() {
+		AttackTxt.text = "";
+		HealthTxt.text = "";
+	}
+
+	public void Initialise (CreatureCard card) {
+		this.card = card;
+		currentAttack = card.attack;
+		currentHealth = card.health;
+		AttackTxt.text = currentAttack.ToString();
+		HealthTxt.text = currentHealth.ToString();
 	}
 }

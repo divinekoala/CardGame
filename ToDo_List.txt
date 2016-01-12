@@ -1,6 +1,5 @@
 To-Do:
 
-- Refactor GamePiece and related wrapper classes to handle all CardTypes.
 - Create prototype UI for Cards and Player, with 'Action' buttons for relevant commands.
 - implement deck and way to loaddeck int o game
 - Implement the ValidTarget class and related sub classes (Target & Conditional).
@@ -11,12 +10,18 @@ To-Do:
 
 Doing:
 
-- Rework GamePiece and GameCard for to better represent a card on the board (Big)
+- Create Card Factory and rework card types to include Initialise method
+- Allow production of cards and place them on the board
 
 On-Hold:
 
-- Split interactions the cards can make from hand and the board to separate classes.
+- Implement cards which can be moved around by button commands
 
 Done:
 
+
+- Refactor GamePiece and related wrapper classes to handle all CardTypes.
+- Reworking Player class to implement board, deck and graveyard
 - Create prototype UI Board with relavant information.
+- Rework GamePiece and GameCard for to better represent a card on the board (Big)
+- Split interactions the cards can make from hand and the board to separate classes.

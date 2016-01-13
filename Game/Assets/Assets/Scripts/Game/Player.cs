@@ -83,5 +83,8 @@ public class Player : MonoBehaviour {
 		discardPile.Add(card);
 	}
 
+	public void AddCardToDeck (Card card) {
+		deck.Add(card);
+	}
 
 }

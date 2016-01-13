@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CardFactory : MonoBehaviour {
 
-	public GameObject handCard;
+//	public GameObject handCard;
 	public GameObject creature;
 
 //	public CreatureCard CreateCreatureCard (int attack, int health, string name, int manaCost, CardType cardType, List<CardEffectName> cfn, int coolDown){
@@ -14,8 +14,9 @@ public class CardFactory : MonoBehaviour {
 //	}
 
 	public GameCreature CreateGameCreature (CreatureCard card) {
-		GameCreature gc = Instantiate(creature).GetComponent<GameCreature>();
-//		gc.transform.parent = GameObject.FindGameObjectWithTag("Canvas");
+		GameObject go = Instantiate(creature);
+		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+		GameCreature gc = go.GetComponent<GameCreature>();
 		gc.Initialise(card);
 		return gc;
 	}

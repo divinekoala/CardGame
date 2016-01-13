@@ -10,8 +10,7 @@ To-Do:
 
 Doing:
 
-- Create Card Factory and rework card types to include Initialise method
-- Allow production of cards and place them on the board
+- Implement the deck which can move cards to hand and to discard
 
 On-Hold:
 
@@ -25,3 +24,5 @@ Done:
 - Create prototype UI Board with relavant information.
 - Rework GamePiece and GameCard for to better represent a card on the board (Big)
 - Split interactions the cards can make from hand and the board to separate classes.
+- Create Card Factory and rework card types to include Initialise method
+- Allow production of cards and place them on the board

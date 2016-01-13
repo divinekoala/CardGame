@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 
 	public List<HandCard> hand = new List<HandCard>();
 	public List<GameCard> board = new List<GameCard>();
-	public List<Card> graveyard = new List<Card>();
+	public List<Card> discardPile = new List<Card>();
 	public List<Card> deck = new List<Card>();
 
 
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void PutCardInGraveyard (Card card) {
-		graveyard.Add(card);
+		discardPile.Add(card);
 	}
 
 

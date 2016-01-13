@@ -54,15 +54,14 @@ public class GameCreature : GameCard, AttackAndHealth {
 	}
 
 	public void Start() {
-		AttackTxt.text = "";
-		HealthTxt.text = "";
+		AttackTxt.text = currentAttack.ToString();
+		HealthTxt.text = currentHealth.ToString();
 	}
 
 	public void Initialise (CreatureCard card) {
 		this.card = card;
 		currentAttack = card.attack;
 		currentHealth = card.health;
-		AttackTxt.text = currentAttack.ToString();
-		HealthTxt.text = currentHealth.ToString();
+
 	}
 }

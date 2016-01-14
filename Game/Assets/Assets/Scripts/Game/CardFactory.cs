@@ -4,14 +4,16 @@ using System.Collections.Generic;
 
 public class CardFactory : MonoBehaviour {
 
-//	public GameObject handCard;
+	public GameObject handCard;
 	public GameObject creature;
 
-//	public CreatureCard CreateCreatureCard (int attack, int health, string name, int manaCost, CardType cardType, List<CardEffectName> cfn, int coolDown){
-//		CreatureCard cc = Instantiate(handCard).GetComponent<CreatureCard>();
-//		cc.Initialise(attack, health, name, manaCost, cardType, cfn, coolDown);
-//		return cc;
-//	}
+	public HandCard CreateHandCard (Card card){
+		GameObject go = Instantiate(handCard);
+		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+		HandCard hc = go.GetComponent<HandCard>();
+		hc.Initialise(card);
+		return hc;
+	}
 
 	public GameCreature CreateGameCreature (CreatureCard card) {
 		GameObject go = Instantiate(creature);

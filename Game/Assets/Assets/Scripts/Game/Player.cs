@@ -73,10 +73,11 @@ public class Player : MonoBehaviour {
 		board.Remove(card);
 	}
 
-	public void DrawCardFromDeck () {
+	public Card DrawCardFromDeck () {
 		Card card = deck[0];
 		hand.Add(new HandCard(card));
 		deck.Remove(card);
+		return card;
 	}
 
 	public void PutCardInGraveyard (Card card) {
@@ -85,6 +86,15 @@ public class Player : MonoBehaviour {
 
 	public void AddCardToDeck (Card card) {
 		deck.Add(card);
+	}
+
+	public void ShuffleDeck () {
+		for (int i = deck.Count -1; i > 0; i--) {
+			int k = Random.Range(0, i);
+			Card temp = deck[k];
+			deck[k] = deck[i];
+			deck[i] = temp;
+		}
 	}
 
 }

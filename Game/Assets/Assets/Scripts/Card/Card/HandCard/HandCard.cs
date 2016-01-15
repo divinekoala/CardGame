@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class HandCard : MonoBehaviour {
@@ -8,6 +9,11 @@ public class HandCard : MonoBehaviour {
 	private int currentCooldown;
 	private int remainingCooldown;
 	private int currentManaCost;
+	private int currentAttack;
+	private int currentHealth;
+
+	public Text ManaText;
+	public Text CoolDownTxt;
 
 	public HandCard (Card card) {
 		this.card = card;
@@ -21,7 +27,6 @@ public class HandCard : MonoBehaviour {
 		this.currentCooldown = card.cooldown;
 		this.remainingCooldown = card.cooldown;
 		this.currentManaCost = card.manaCost;
-
 	} 
 
 	public Card Card {
@@ -64,5 +69,10 @@ public class HandCard : MonoBehaviour {
 
 	public List<CardEffectName> GetEffects () {
 		return card.cardEffectName;
+	}
+
+	public void Start() {
+		ManaText.text = currentAttack.ToString();
+		CoolDownTxt.text = currentHealth.ToString();
 	}
 }

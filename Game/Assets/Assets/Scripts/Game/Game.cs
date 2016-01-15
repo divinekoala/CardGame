@@ -19,6 +19,7 @@ public class Game : MonoBehaviour {
 		this.effectHandler = effHandle;
 		this.turnHandler = turnHandle;
 	}
+		
 
 	public Player GetPlayer1 () {
 		return player1;

@@ -5,20 +5,26 @@ using System.Collections.Generic;
 /// This class holds the information of the Player and is useable by the Game to perform actions.
 /// This inherits from GamePiece.
 /// </summary>
-public class Player : MonoBehaviour {
+public class Player {
     private int maxhealth;
     private bool isHuman;
     private int maxMana;
     private int currentMana;
     private int remainingMana;
 
-	public GameObject CardPrefab;
 
 	public List<HandCard> hand = new List<HandCard>();
 	public List<GameCard> board = new List<GameCard>();
 	public List<Card> discardPile = new List<Card>();
 	public List<Card> deck = new List<Card>();
 
+	public Player (int maxHealth, int maxMana){
+		this.maxMana = maxHealth;
+		this.isHuman = true;
+		this.maxMana = maxMana;
+		this.currentMana = maxMana;
+		this.remainingMana = maxMana;
+	}
 
 
     public void UseMana(int cost) {

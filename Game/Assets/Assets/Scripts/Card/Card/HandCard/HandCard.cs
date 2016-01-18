@@ -9,8 +9,7 @@ public class HandCard : MonoBehaviour {
 	private int currentCooldown;
 	private int remainingCooldown;
 	private int currentManaCost;
-	private int currentAttack;
-	private int currentHealth;
+
 
 	public Text ManaText;
 	public Text CoolDownTxt;
@@ -72,7 +71,7 @@ public class HandCard : MonoBehaviour {
 	}
 
 	public void Start() {
-		ManaText.text = currentAttack.ToString();
-		CoolDownTxt.text = currentHealth.ToString();
+		ManaText.text = currentManaCost.ToString();
+		CoolDownTxt.text = currentCooldown.ToString();
 	}
 }

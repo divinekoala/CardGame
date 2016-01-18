@@ -80,8 +80,7 @@ public class Player {
 	}
 
 	public Card DrawCardFromDeck () {
-		Card card = deck[0];
-		hand.Add(new HandCard(card));
+		Card card  = deck[0];
 		deck.Remove(card);
 		return card;
 	}

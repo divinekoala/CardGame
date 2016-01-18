@@ -14,6 +14,8 @@ public class GameCreature : GameCard, AttackAndHealth {
 	private int currentAttack;
 	private int currentHealth;
 
+	private Card card;
+
 	public GameCreature (CreatureCard card) {
 		this.card = card;
 		currentAttack = card.attack;

@@ -12,12 +12,12 @@ public class Game : MonoBehaviour {
     private EffectHandler effectHandler;
 	private TurnHandler turnHandler;
 
-	public Game (Player p1, Player p2, EffectHandler effHandle, TurnHandler turnHandle) {
+	public Game () {
 
-		this.player1 = p1;
-		this.player2 = p2;
-		this.effectHandler = effHandle;
-		this.turnHandler = turnHandle;
+		this.player1 = new Player(20, 5);
+		this.player2 = new Player(20, 5);
+		this.effectHandler = new EffectHandler();
+		this.turnHandler = new TurnHandler();
 	}
 		
 

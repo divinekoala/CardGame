@@ -16,11 +16,7 @@ public class HandCreature : HandCard {
 	public Text AttackTxt;
 	public Text HealthTxt;
 
-	public HandCreature (CreatureCard card) {
-		this.card = card;
-		this.currentCooldown = card.cooldown;
-		this.remainingCooldown = card.cooldown;
-		this.currentManaCost = card.manaCost;
+	public HandCreature (CreatureCard card): base (card) {
 		this.currentAttack = card.attack;
 		this.currentHealth = card.health;
 	}
@@ -30,6 +26,9 @@ public class HandCreature : HandCard {
 		this.currentCooldown = card.cooldown;
 		this.remainingCooldown = card.cooldown;
 		this.currentManaCost = card.manaCost;
+		this.currentAttack = card.attack;
+		this.currentHealth = card.health;
+
 	} 
 
 	public void Start() {

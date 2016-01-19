@@ -48,8 +48,8 @@ public class GameController : MonoBehaviour {
 		if (go.name == "P1_Deck"){
 			Debug.Log("In Player 1");
 //			Card c = game.GetPlayer1().DrawCardFromDeck();
-			CreatureCard c = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, null, 2);
-			CardFactory.Instance.CreateHandCreature(c);
+			Card c = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, null, 2);
+			CardFactory.Instance.CreateHandCard(c);
 			Debug.Log("P1 Draw");
 		}
 		else {

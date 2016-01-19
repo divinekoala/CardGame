@@ -17,27 +17,33 @@ public class CardFactory : MonoBehaviour {
 		Instance = this;
 	}
 
-	public HandCard CreateHandCard (Card card){
+	public void CreateHandCard (Card card){
 		GameObject go = Instantiate(handCard);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-		HandCard hc = go.GetComponent<HandCard>();
-		hc.Initialise(card);
-		return hc;
+
+
+		if (card.cardType == CardType.Creature){
+			HandCreature hc = go.GetComponent<HandCreature>();
+			CreatureCard cc = (CreatureCard)card;
+			hc.Initialise(cc);
+		}
+//		HandCard hc = go.GetComponent<HandCard>();
+//		hc.Initialise(card);
 	}
 
-	public GameCreature CreateGameCreature (CreatureCard card) {
+	public void CreateGameCreature (CreatureCard card) {
 		GameObject go = Instantiate(creature);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
 		GameCreature gc = go.GetComponent<GameCreature>();
 		gc.Initialise(card);
-		return gc;
 	}
 
-	public HandCreature CreateHandCreature (CreatureCard card) {
+	public void CreateHandCreature (CreatureCard card) {
 		GameObject go = Instantiate(handCreature);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
 		HandCreature hc = go.GetComponent<HandCreature>();
 		hc.Initialise(card);
-		return hc;
 	}
+
+
 }

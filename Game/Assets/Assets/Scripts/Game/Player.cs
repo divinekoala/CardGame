@@ -81,7 +81,7 @@ public class Player {
 
 	public Card DrawCardFromDeck () {
 		Card card  = deck[0];
-		deck.Remove(card);
+		deck.RemoveAt(0);
 		return card;
 	}
 

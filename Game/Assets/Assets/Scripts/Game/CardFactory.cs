@@ -18,17 +18,12 @@ public class CardFactory : MonoBehaviour {
 	}
 
 	public void CreateHandCard (Card card){
-		GameObject go = Instantiate(handCard);
-		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-
 
 		if (card.cardType == CardType.Creature){
-			HandCreature hc = go.GetComponent<HandCreature>();
-			CreatureCard cc = (CreatureCard)card;
-			hc.Initialise(cc);
+			Debug.Log("Am a Creature");
+			CreateHandCreature(card);
 		}
-//		HandCard hc = go.GetComponent<HandCard>();
-//		hc.Initialise(card);
+			
 	}
 
 	public void CreateGameCreature (CreatureCard card) {
@@ -38,7 +33,7 @@ public class CardFactory : MonoBehaviour {
 		gc.Initialise(card);
 	}
 
-	public void CreateHandCreature (CreatureCard card) {
+	public void CreateHandCreature (Card card) {
 		GameObject go = Instantiate(handCreature);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
 		HandCreature hc = go.GetComponent<HandCreature>();

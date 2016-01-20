@@ -5,6 +5,7 @@ using System.Collections;
 public class HandCreature : HandCard {
 
 	private Card card;
+	private CreatureCard cCard;
 
 	private int currentCooldown;
 	private int remainingCooldown;
@@ -16,18 +17,21 @@ public class HandCreature : HandCard {
 	public Text AttackTxt;
 	public Text HealthTxt;
 
-	public HandCreature (CreatureCard card): base (card) {
-		this.currentAttack = card.attack;
-		this.currentHealth = card.health;
+	public HandCreature (Card card): base (card) {
+		this.card = card;
+		cCard = (CreatureCard)card;
+		this.currentAttack = cCard.attack;
+		this.currentHealth = cCard.health;
 	}
 
-	public void Initialise (CreatureCard card) {
+	public void Initialise (Card card) {
 		this.card = card;
+		this.cCard = (CreatureCard)card;
 		this.currentCooldown = card.cooldown;
 		this.remainingCooldown = card.cooldown;
 		this.currentManaCost = card.manaCost;
-		this.currentAttack = card.attack;
-		this.currentHealth = card.health;
+		this.currentAttack = cCard.attack;
+		this.currentHealth = cCard.health;
 
 	} 
 

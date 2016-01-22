@@ -18,7 +18,6 @@ public class HandCreature : HandCard {
 	public Text HealthTxt;
 
 	public HandCreature (Card card): base (card) {
-		this.card = card;
 		cCard = (CreatureCard)card;
 		this.currentAttack = cCard.attack;
 		this.currentHealth = cCard.health;

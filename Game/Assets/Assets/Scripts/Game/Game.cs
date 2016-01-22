@@ -6,16 +6,13 @@ using System.Collections.Generic;
 /// It handles interactions between other classes.
 /// </summary>
 public class Game : MonoBehaviour {
-    private Player player1;
-    private Player player2;
+    public Player player1;
+	public Player player2;
 
     private EffectHandler effectHandler;
 	private TurnHandler turnHandler;
 
 	public Game () {
-
-		this.player1 = new Player(20, 5);
-		this.player2 = new Player(20, 5);
 		this.effectHandler = new EffectHandler();
 		this.turnHandler = new TurnHandler();
 	}

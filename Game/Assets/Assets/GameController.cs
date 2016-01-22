@@ -20,27 +20,29 @@ public class GameController : MonoBehaviour {
 		Card c3 = new CreatureCard(2, 1, "Bishop", 2, CardType.Creature, null, 0);
 		Card c4 = new CreatureCard(2, 5, "King", 4, CardType.Creature, null, 0);
 
-		InitPlayer();
+		Player p1 = new Player(20, 5);
+		Player p2 = new Player(20, 2);
+		Game game = new Game(p1, p2);
 		CreateDeck(game.GetPlayer1());
 //		ShuffleDeck(game.GetPlayer1());
 	}
 
-	public void InitPlayer() {
-		game.GetPlayer1().Initialise(20, 5);
-	}
+//	public void InitPlayer() {
+//		game.GetPlayer1().Initialise(20, 5);
+//	}
 
 	public void CreateDeck(Player player) {
 		player.AddCardToDeck(c0);
-		player.AddCardToDeck(c1);
-		player.AddCardToDeck(c2);
-		player.AddCardToDeck(c3);
-		player.AddCardToDeck(c4);
-		player.AddCardToDeck(c0);
-		player.AddCardToDeck(c1);
-		player.AddCardToDeck(c2);
-		player.AddCardToDeck(c3);
+//		player.AddCardToDeck(c1);
+//		player.AddCardToDeck(c2);
+//		player.AddCardToDeck(c3);
+//		player.AddCardToDeck(c4);
+//		player.AddCardToDeck(c0);
+//		player.AddCardToDeck(c1);
+//		player.AddCardToDeck(c2);
+//		player.AddCardToDeck(c3);
 		Debug.Log("Added Cards");
-		Debug.Log(game.player1.deck[0]);
+		Debug.Log(game.player1.maxhealth);
 	}
 
 	public void ShuffleDeck(Player player) {

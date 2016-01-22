@@ -5,14 +5,17 @@ using System.Collections.Generic;
 /// This class controls the game.
 /// It handles interactions between other classes.
 /// </summary>
-public class Game : MonoBehaviour {
+public class Game {
     public Player player1;
 	public Player player2;
 
     private EffectHandler effectHandler;
 	private TurnHandler turnHandler;
 
-	public Game () {
+	public Game (Player p1, Player p2) {
+
+		this.player1 = p1;
+		this.player2 = p2;
 		this.effectHandler = new EffectHandler();
 		this.turnHandler = new TurnHandler();
 	}

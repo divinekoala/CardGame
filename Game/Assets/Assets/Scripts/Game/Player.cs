@@ -5,8 +5,8 @@ using System.Collections.Generic;
 /// This class holds the information of the Player and is useable by the Game to perform actions.
 /// This inherits from GamePiece.
 /// </summary>
-public class Player : MonoBehaviour{
-    private int maxhealth;
+public class Player{
+    public int maxhealth;
     private bool isHuman;
     private int maxMana;
     private int currentMana;
@@ -18,17 +18,17 @@ public class Player : MonoBehaviour{
 	public List<Card> discardPile;
 	public List<Card> deck;
 
-//	public Player (int maxHealth, int maxMana){
-//		this.maxMana = maxHealth;
-//		this.isHuman = true;
-//		this.maxMana = maxMana;
-//		this.currentMana = maxMana;
-//		this.remainingMana = maxMana;
-//		deck = new List<Card>();
-//		discardPile = new List<Card>();
-//		board = new List<GameCard>();
-//		hand = new List<HandCard>();
-//	}
+	public Player (int maxHealth, int maxMana){
+		this.maxMana = maxHealth;
+		this.isHuman = true;
+		this.maxMana = maxMana;
+		this.currentMana = maxMana;
+		this.remainingMana = maxMana;
+		deck = new List<Card>();
+		discardPile = new List<Card>();
+		board = new List<GameCard>();
+		hand = new List<HandCard>();
+	}
 
 	public void Initialise (int maxHealth, int maxMana){
 		this.maxMana = maxHealth;

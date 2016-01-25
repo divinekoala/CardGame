@@ -34,6 +34,10 @@ public class HandCard : MonoBehaviour {
 		}
 	}
 
+	public void SetCard (Card card) {
+		this.card = card;
+	}
+
 	public int GetCurrentCooldown () {
 		return currentCooldown;
 	}
@@ -71,6 +75,10 @@ public class HandCard : MonoBehaviour {
 	}
 
 	public void Start() {
+		SetText();
+	}
+
+	public void SetText () {
 		ManaText.text = currentManaCost.ToString();
 		CoolDownTxt.text = currentCooldown.ToString();
 	}

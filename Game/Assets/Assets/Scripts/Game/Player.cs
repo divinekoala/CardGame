@@ -5,21 +5,23 @@ using System.Collections.Generic;
 /// This class holds the information of the Player and is useable by the Game to perform actions.
 /// This inherits from GamePiece.
 /// </summary>
-public class Player{
+public class Player {
     public int maxhealth;
+	public int currentHealth;
     private bool isHuman;
     private int maxMana;
     private int currentMana;
     private int remainingMana;
 
 
-	public List<HandCard> hand;
-	public List<GameCard> board;
-	public List<Card> discardPile;
-	public List<Card> deck;
+	private List<HandCard> hand = new List<HandCard>();
+	private List<GameCard> board = new List<GameCard>();
+	private List<Card> discardPile = new List<Card>();
+	private List<Card> deck = new List<Card>();
 
 	public Player (int maxHealth, int maxMana){
-		this.maxMana = maxHealth;
+		this.maxhealth = maxHealth;
+		this.currentHealth = maxHealth;
 		this.isHuman = true;
 		this.maxMana = maxMana;
 		this.currentMana = maxMana;
@@ -32,6 +34,7 @@ public class Player{
 
 	public void Initialise (int maxHealth, int maxMana){
 		this.maxMana = maxHealth;
+		this.currentHealth = maxHealth;
 		this.isHuman = true;
 		this.maxMana = maxMana;
 		this.currentMana = maxMana;
@@ -41,7 +44,14 @@ public class Player{
 		board = new List<GameCard>();
 		hand = new List<HandCard>();
 	}
+		
+	public int GetHealth() {
+		return maxhealth;
+	}
 
+	public List<Card> GetDeck(){
+		return deck;
+	}
 
     public void UseMana(int cost) {
         if(remainingMana >= cost)

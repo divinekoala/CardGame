@@ -4,6 +4,8 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	public Game game;
+	public Player p1;
+	public Player p2;
 
 	public CreatureCard c0;
 	public CreatureCard c1;
@@ -20,10 +22,12 @@ public class GameController : MonoBehaviour {
 		Card c3 = new CreatureCard(2, 1, "Bishop", 2, CardType.Creature, null, 0);
 		Card c4 = new CreatureCard(2, 5, "King", 4, CardType.Creature, null, 0);
 
-		Player p1 = new Player(20, 5);
-		Player p2 = new Player(20, 2);
+		p1 = new Player(20, 5);
+		p2 = new Player(20, 2);
+
 		Game game = new Game(p1, p2);
-		CreateDeck(game.GetPlayer1());
+		Debug.Log("Player 1 health :" + p1.GetHealth());
+		CreateDeck(p1);
 //		ShuffleDeck(game.GetPlayer1());
 	}
 
@@ -42,13 +46,13 @@ public class GameController : MonoBehaviour {
 //		player.AddCardToDeck(c2);
 //		player.AddCardToDeck(c3);
 		Debug.Log("Added Cards");
-		Debug.Log(game.player1.maxhealth);
+		Debug.Log(p1.maxhealth);
 	}
 
 	public void ShuffleDeck(Player player) {
 		player.ShuffleDeck();
 		Debug.Log("Shuffle Deck");
-		foreach (Card c in player.deck){
+		foreach (Card c in player.GetDeck()){
 			Debug.Log(c.name);
 		}
 	}
@@ -57,7 +61,7 @@ public class GameController : MonoBehaviour {
 		Debug.Log("Try Draw");
 		if (go.name == "P1_Deck"){
 			Debug.Log("In Player 1");
-			Card c = game.GetPlayer1().DrawCardFromDeck();
+			Card c = p1.DrawCardFromDeck();
 			CardFactory.Instance.CreateHandCard(c);
 			Debug.Log("P1 Draw");
 		}

@@ -16,11 +16,11 @@ public class GameController : MonoBehaviour {
 
 	public void Start () {
 
-		Card c0 = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, null, 0);
-		Card c1 = new CreatureCard(3, 3, "Horse", 3, CardType.Creature, null, 0);
-		Card c2 = new CreatureCard(1, 2, "Spearman", 1, CardType.Creature, null, 0);
-		Card c3 = new CreatureCard(2, 1, "Bishop", 2, CardType.Creature, null, 0);
-		Card c4 = new CreatureCard(2, 5, "King", 4, CardType.Creature, null, 0);
+		CreatureCard c0 = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, null, 0);
+		CreatureCard c1 = new CreatureCard(3, 3, "Horse", 3, CardType.Creature, null, 0);
+		CreatureCard c2 = new CreatureCard(1, 2, "Spearman", 1, CardType.Creature, null, 0);
+		CreatureCard c3 = new CreatureCard(2, 1, "Bishop", 2, CardType.Creature, null, 0);
+		CreatureCard c4 = new CreatureCard(2, 5, "King", 4, CardType.Creature, null, 0);
 
 		p1 = new Player(20, 5);
 		p2 = new Player(20, 2);
@@ -46,7 +46,8 @@ public class GameController : MonoBehaviour {
 //		player.AddCardToDeck(c2);
 //		player.AddCardToDeck(c3);
 		Debug.Log("Added Cards");
-		Debug.Log(p1.maxhealth);
+		Debug.Log(p1.GetDeck()[0].name);
+
 	}
 
 	public void ShuffleDeck(Player player) {

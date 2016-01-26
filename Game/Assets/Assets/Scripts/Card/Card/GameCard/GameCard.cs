@@ -7,6 +7,14 @@ using System.Collections.Generic;
 /// </summary>
 public class GameCard : MonoBehaviour {
 	
-	public Card card { get; set; }
+	private Card card { get; set; }
+
+	public void SetCard (Card card){
+		this.card = card;
+	}
+
+	public Card GetCard () {
+		return card;
+	}
 
 }

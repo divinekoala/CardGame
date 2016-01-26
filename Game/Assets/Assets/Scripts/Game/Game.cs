@@ -80,7 +80,7 @@ public class Game {
 
 	public void MoveCardToGraveyard (GameCard card, Player currentPlayer) {
 		currentPlayer.RemoveFromBoard(card);
-		currentPlayer.PutCardInGraveyard(card.card);
+		currentPlayer.PutCardInGraveyard(card.GetCard());
 	}
 		
 }

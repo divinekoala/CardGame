@@ -19,13 +19,6 @@ public class HandCard : MonoBehaviour {
 		this.currentCooldown = card.cooldown;
 		this.remainingCooldown = card.cooldown;
 		this.currentManaCost = card.manaCost;
-	}
-
-	public void Initialise (Card card) {
-		this.card = card;
-		this.currentCooldown = card.cooldown;
-		this.remainingCooldown = card.cooldown;
-		this.currentManaCost = card.manaCost;
 	} 
 
 	public Card Card {
@@ -72,10 +65,6 @@ public class HandCard : MonoBehaviour {
 
 	public List<CardEffectName> GetEffects () {
 		return card.cardEffectName;
-	}
-
-	public void Start() {
-		SetText();
 	}
 
 	public void SetText () {

@@ -14,12 +14,11 @@ public class GameCreature : GameCard, AttackAndHealth {
 	private int currentAttack;
 	private int currentHealth;
 
-	private Card card;
-
-	public GameCreature (CreatureCard card) {
-		this.card = card;
-		currentAttack = card.attack;
-		currentHealth = card.health;
+	public GameCreature (Card card) {
+		SetCard(card);
+		CreatureCard gc = (CreatureCard)card;
+		currentAttack = gc.attack;
+		currentHealth = gc.health;
 
 	}
 
@@ -60,10 +59,11 @@ public class GameCreature : GameCard, AttackAndHealth {
 		HealthTxt.text = currentHealth.ToString();
 	}
 
-	public new void Initialise (CreatureCard card) {
-		this.card = card;
-		currentAttack = card.attack;
-		currentHealth = card.health;
+	public void Initialise (Card card) {
+		SetCard(card);
+		CreatureCard gc = (CreatureCard)card;
+		currentAttack = gc.attack;
+		currentHealth = gc.health;
 
 	}
 }

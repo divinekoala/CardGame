@@ -17,7 +17,7 @@ public class Player {
 	private List<HandCard> hand = new List<HandCard>();
 	private List<GameCard> board = new List<GameCard>();
 	private List<Card> discardPile = new List<Card>();
-	private List<Card> deck = new List<Card>();
+	public List<Card> deck = new List<Card>();
 
 	public Player (int maxHealth, int maxMana){
 		this.maxhealth = maxHealth;
@@ -85,7 +85,7 @@ public class Player {
 		}
 	}
 
-	public void AddCardFromHand (HandCard card) {
+	public void AddCardToHand (HandCard card) {
 		hand.Add(card);
 	}
 		

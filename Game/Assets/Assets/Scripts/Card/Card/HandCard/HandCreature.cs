@@ -12,15 +12,15 @@ public class HandCreature : HandCard {
 	public Text AttackTxt;
 	public Text HealthTxt;
 
-	public HandCreature (Card card): base (card) {
-		cCard = (CreatureCard)card;
+	public HandCreature (CreatureCard card): base (card) {
+		this.cCard = card;
 		this.currentAttack = cCard.attack;
 		this.currentHealth = cCard.health;
 	}
 
-	public void Initialise (Card card) {
+	public void Initialise (CreatureCard card) {
 		SetCard(card);
-		this.cCard = (CreatureCard)card;
+		this.cCard = card;
 		SetCurrentCooldown(card.cooldown);
 		GoOnCooldown();
 		SetCurrentManaCost(card.manaCost);

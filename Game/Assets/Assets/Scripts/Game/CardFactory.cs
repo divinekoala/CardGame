@@ -6,9 +6,10 @@ public class CardFactory : MonoBehaviour {
 
 	public static CardFactory Instance;
 
-	public GameObject handCard;
+	public GameObject handSpell;
 	public GameObject handCreature;
 	public GameObject creature;
+	public GameObject spell;
 
 	void Awake () {
 		if (Instance != null  && Instance != this){
@@ -41,5 +42,17 @@ public class CardFactory : MonoBehaviour {
 		hc.Initialise(card);
 	}
 
+	public void CreateGameSpell (GameSpell card) {
+		GameObject go = Instantiate(spell);
+		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+		GameSpell gs = go.GetComponent<GameSpell>();
+		gs.Initialise(card);
+	}
 
+	public void CreateHandSpell (GameSpell card) {
+		GameObject go = Instantiate(spell);
+		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+		HandSpell hs = go.GetComponent<HandSpell>();
+		hs.Initialise(card);
+	}
 }

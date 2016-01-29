@@ -13,12 +13,13 @@ public class GameCreature : GameCard, AttackAndHealth {
 
 	private int currentAttack;
 	private int currentHealth;
+	private CardEffectName cardEffectName;
 
-	public GameCreature (Card card) {
-		SetCard(card);
+	public GameCreature (Card card): base(card) {
 		CreatureCard gc = (CreatureCard)card;
 		currentAttack = gc.attack;
 		currentHealth = gc.health;
+
 
 	}
 
@@ -32,6 +33,14 @@ public class GameCreature : GameCard, AttackAndHealth {
 
 	public int GetCurrentAttack() {
 		return currentAttack;
+	}
+
+	public CardEffectName GetCardEffectName () {
+		return cardEffectName;
+	}
+
+	public void SetCardEffectName(CardEffectName cen) {
+		cardEffectName = cen;
 	}
 
 	public void ModifyCurrentAttack(int value){

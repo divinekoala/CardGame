@@ -9,6 +9,10 @@ public class GameCard : MonoBehaviour {
 	
 	private Card card { get; set; }
 
+	public GameCard (Card card) {
+		this.card = card;
+	}
+
 	public void SetCard (Card card){
 		this.card = card;
 	}

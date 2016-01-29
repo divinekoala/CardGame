@@ -46,23 +46,6 @@ public class Game {
 		turnHandler.NextPhase();
 	}
 
-	// Once validated plays card and passes on the effects
-	public void PlayCardFromHand (HandCard card, Player currentPlayer) {
-		// Check for Mana / Cooldown
-		// Use Mana
-		// Remove Card From Players Hand
-		// Create the card and Place on board
-		// Add effect to EffectHandler
-
-		if (ValidateCardPlay(card, currentPlayer)) {
-			currentPlayer.UseMana(card.GetCurrentManaCost());
-
-			currentPlayer.RemoveCardFromHand(card);
-			currentPlayer.AddToBoard(CreateCard(card));
-		}
-
-	}
-
 	// Checks if player has enough mana and card is not on cooldown
 	public bool ValidateCardPlay (HandCard card, Player currentPlayer) {
 		if (currentPlayer.CheckMana(card.GetCurrentManaCost()) && card.GetCurrentCooldown() == 0){
@@ -70,12 +53,6 @@ public class Game {
 		} else {
 			return false;
 		}
-	}
-
-	//Creates the GameCard as a GameObject
-	public GameCard CreateCard (HandCard card){
-		//ToDo
-		return new GameCard();
 	}
 
 	public void MoveCardToGraveyard (GameCard card, Player currentPlayer) {

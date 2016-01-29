@@ -63,10 +63,6 @@ public class HandCard : MonoBehaviour {
 		currentManaCost = value;
 	}
 
-	public List<CardEffectName> GetEffects () {
-		return card.cardEffectName;
-	}
-
 	public void SetText () {
 		ManaText.text = currentManaCost.ToString();
 		CoolDownTxt.text = currentCooldown.ToString();

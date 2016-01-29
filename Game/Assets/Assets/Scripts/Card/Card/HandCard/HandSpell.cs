@@ -3,13 +3,15 @@ using System.Collections;
 
 public class HandSpell : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public HandSpell (SpellCard card): base (card) {
+		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+	public void Initialise (SpellCard card) {
+		SetCard(card);
+		this.cCard = card;
+		SetCurrentCooldown(card.cooldown);
+		GoOnCooldown();
+		SetCurrentManaCost(card.manaCost);
+
 }

@@ -6,19 +6,19 @@ To-Do:
 - Creating targeting system based on the Card Effect and ValidTarget.
 - Decide on how to Implement a Creature Attack (as an Effect or as it's own function).
 - Refactor TurnHandler and reflect only valid 'Actions' with commands.
+- Create a Play Card   to move cards from hand to field.
 
 
 Doing:
 
-- Implement the deck which can move cards to hand and to discard
+- Create class and associated classes / functions for spells, weapons and armour
 
 On-Hold:
 
-- Implement cards which can be moved around by button commands
 
 Done:
 
-
+- Implement the deck which can move cards to hand
 - Refactor GamePiece and related wrapper classes to handle all CardTypes.
 - Reworking Player class to implement board, deck and graveyard
 - Create prototype UI Board with relavant information.

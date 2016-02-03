@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class HandCard : MonoBehaviour {
 
-	private Card card;
+	private Card card {get; set;}
 
 	private int currentCooldown;
 	private int remainingCooldown;
@@ -20,12 +20,6 @@ public class HandCard : MonoBehaviour {
 		this.remainingCooldown = card.cooldown;
 		this.currentManaCost = card.manaCost;
 	} 
-
-	public Card Card {
-		get {
-			return this.card;
-		}
-	}
 
 	public void SetCard (Card card) {
 		this.card = card;
@@ -61,6 +55,11 @@ public class HandCard : MonoBehaviour {
 
 	public void SetCurrentManaCost (int value) {
 		currentManaCost = value;
+	}
+
+	public void GetTextFields (Text mana, Text cooldown) {
+		ManaText = mana;
+		CoolDownTxt = cooldown;
 	}
 
 	public void SetText () {

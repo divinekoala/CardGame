@@ -63,6 +63,11 @@ public class GameCreature : GameCard, AttackAndHealth {
 		currentHealth = value;
 	}
 
+	public void GetCreatureFields (Text attack, Text health, Text mana, Text cooldown) {
+		AttackTxt = attack;
+		HealthTxt = health;
+	}
+
 	public void Start() {
 		AttackTxt.text = currentAttack.ToString();
 		HealthTxt.text = currentHealth.ToString();

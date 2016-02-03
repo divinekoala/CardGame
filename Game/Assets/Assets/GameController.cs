@@ -17,8 +17,8 @@ public class GameController : MonoBehaviour {
 	public void Start () {
 
 		CreatureCard c0 = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, CardEffectName.Effect1, 0);
-		CreatureCard c1 = new CreatureCard(3, 3, "Horse", 3, CardType.Creature, CardEffectName.Effect1, 0);
-		CreatureCard c2 = new CreatureCard(1, 2, "Spearman", 1, CardType.Creature, CardEffectName.Effect1, 0);
+		SpellCard c1 = new SpellCard("Horse", 3, CardType.Spell, CardEffectName.Effect1, 1);
+		SpellCard c2 = new SpellCard("Spearman", 1, CardType.Spell, CardEffectName.Effect1, 1);
 		CreatureCard c3 = new CreatureCard(2, 1, "Bishop", 2, CardType.Creature, CardEffectName.Effect1, 0);
 		CreatureCard c4 = new CreatureCard(2, 5, "King", 4, CardType.Creature, CardEffectName.Effect1, 0);
 

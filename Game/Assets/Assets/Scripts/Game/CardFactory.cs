@@ -41,18 +41,14 @@ public class CardFactory : MonoBehaviour {
 	public void CreateGameCreature (Card card) {
 		GameObject go = Instantiate(attackHealthCard);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-		GameCreature gc = go.AddComponent<GameCreature>() as GameCreature;
-		GetText(attackHealthCard);
-//		hs.GetTextFields(manaTxt, cooldownTxt);
+		GameCreature gc = go.GetComponent<GameCreature>() as GameCreature;
 		gc.Initialise(card);
 	}
 
 	public void CreateGameSpell (Card card) {
 		GameObject go = Instantiate(manaCooldownCard);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-		GameSpell gs = go.AddComponent<GameSpell>() as GameSpell;
-		GetText(manaCooldownCard);
-//		gs.GetTextFields(manaTxt, cooldownTxt);
+		GameSpell gs = go.GetComponent<GameSpell>() as GameSpell;
 		gs.Initialise(card);
 	}
 
@@ -60,37 +56,15 @@ public class CardFactory : MonoBehaviour {
 	public void CreateHandCreature (CreatureCard card) {
 		GameObject go = Instantiate(allStatsCard);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-		HandCreature hc = go.AddComponent<HandCreature>() as HandCreature;
-		GetText(allStatsCard);
-		hc.GetTextFields(manaTxt, cooldownTxt, attackTxt, healthTxt);
+		HandCreature hc = go.GetComponent<HandCreature>() as HandCreature;
 		hc.Initialise(card);
 	}
 
 	public void CreateHandSpell (SpellCard card) {
 		GameObject go = Instantiate(manaCooldownCard);
 		go.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-		HandSpell hs = go.AddComponent<HandSpell>() as HandSpell;
-		GetText(manaCooldownCard);
-		hs.GetTextFields(manaTxt, cooldownTxt);
+		HandSpell hs = go.GetComponent<HandSpell>() as HandSpell;
 		hs.Initialise(card);
 	}
 
-	public void GetText (GameObject go) {
-		Component[] textGO = go.GetComponentsInChildren<Text>();
-		foreach ( Text t in textGO) {
-			
-			if (t.name == "attack"){
-				attackTxt = t.GetComponent<Text>();
-			}
-			if (t.name == "health"){
-				healthTxt = t.GetComponent<Text>();
-			}
-			if (t.name == "mana"){
-				manaTxt = t.GetComponent<Text>();
-			}
-			if (t.name == "cooldown"){
-				cooldownTxt = t.GetComponent<Text>();
-			}
-		}
-	}
 }

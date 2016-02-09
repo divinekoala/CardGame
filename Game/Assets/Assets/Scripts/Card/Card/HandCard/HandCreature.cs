@@ -30,8 +30,7 @@ public class HandCreature : HandCard {
 	} 
 
 	public void GetTextFields (Text mana, Text cooldown, Text attack, Text health) {
-		ManaText = mana;
-		CoolDownTxt = cooldown;
+		GetManaCDField(mana, cooldown);
 		AttackTxt = attack;
 		HealthTxt = health;
 	}

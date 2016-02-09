@@ -57,7 +57,7 @@ public class HandCard : MonoBehaviour {
 		currentManaCost = value;
 	}
 
-	public void GetTextFields (Text mana, Text cooldown) {
+	public void GetManaCDField (Text mana, Text cooldown) {
 		ManaText = mana;
 		CoolDownTxt = cooldown;
 	}

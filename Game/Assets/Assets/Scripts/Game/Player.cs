@@ -9,6 +9,7 @@ public class Player {
     public int maxhealth;
 	public int currentHealth;
     private bool isHuman;
+	public bool isPlayer1;
     private int maxMana;
     private int currentMana;
     private int remainingMana;
@@ -19,13 +20,14 @@ public class Player {
 	private List<Card> discardPile = new List<Card>();
 	public List<Card> deck = new List<Card>();
 
-	public Player (int maxHealth, int maxMana){
+	public Player (int maxHealth, int maxMana, bool isPlayer1){
 		this.maxhealth = maxHealth;
 		this.currentHealth = maxHealth;
 		this.isHuman = true;
 		this.maxMana = maxMana;
 		this.currentMana = maxMana;
 		this.remainingMana = maxMana;
+		this.isPlayer1 = isPlayer1;
 		deck = new List<Card>();
 		discardPile = new List<Card>();
 		board = new List<GameCard>();

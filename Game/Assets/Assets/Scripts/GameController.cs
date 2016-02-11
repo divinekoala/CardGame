@@ -4,8 +4,8 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	public Game game;
-	public Player p1 = new Player(20, 5);
-	public Player p2 = new Player(20, 2);
+	public Player p1 = new Player(20, 5, true);
+	public Player p2 = new Player(20, 2, false);
 
 	public CreatureCard c0;
 	public CreatureCard c1;
@@ -57,13 +57,13 @@ public class GameController : MonoBehaviour {
 		if (go.name == "P1_Deck"){
 			Debug.Log("In Player 1");
 			Card c = p1.DrawCardFromDeck();
-			CardFactory.Instance.CreateHandCard(c);
+			CardFactory.Instance.CreateHandCard(c, p1);
 			Debug.Log("P1 Draw");
 		}
 		else if (go.name == "P2_Deck"){
 			Debug.Log("In Player 2");
 			Card c = p2.DrawCardFromDeck();
-			CardFactory.Instance.CreateHandCard(c);
+			CardFactory.Instance.CreateHandCard(c, p2);
 			Debug.Log("P2 Draw");
 		}
 	}

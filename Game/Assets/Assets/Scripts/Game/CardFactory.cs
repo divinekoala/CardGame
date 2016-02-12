@@ -27,28 +27,29 @@ public class CardFactory : MonoBehaviour {
 
 	public void CreateHandCard (Card card, Player player){
 
-		GameObject handCard;
+		GameObject cardInHand = null;
 
 		if (card.cardType == CardType.Creature){
 			Debug.Log("Am a Creature");
 			CreatureCard cCard = (CreatureCard)card;
-			CreateHandCreature(cCard);
+			cardInHand = CreateHandCreature(cCard);
 		}
 
 		else if (card.cardType == CardType.Spell){
 			Debug.Log("Am a Spell");
 			SpellCard sCard = (SpellCard)card;
-			CreateHandSpell(sCard);
+			cardInHand = CreateHandSpell(sCard);
 		}
 
-		GameObject[] go = GameObject.FindGameObjectsWithTag("Hand");
+		Debug.Log(cardInHand.name);
+	
 
 		if (player.isPlayer1) {
-			foreach (GameObject game in go){
-				if (game.name == "P1_Hand")
-					handCard.transform.SetParent(game);
-				// THIS FAILS
-			}
+			cardInHand.transform.SetParent(p1HandContents, false);
+		}
+
+		if (!player.isPlayer1) {
+			cardInHand.transform.SetParent(p2HandContents, false);
 		}
 			
 	}

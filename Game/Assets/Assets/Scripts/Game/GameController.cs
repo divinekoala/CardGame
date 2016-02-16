@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
 	public CreatureCard c4;
 
 
-	public void Start () {
+	void Start () {
 
 		CreatureCard c0 = new CreatureCard(3, 2, "Knight", 3, CardType.Creature, CardEffectName.Effect1, 0);
 		SpellCard c1 = new SpellCard("Horse", 3, CardType.Spell, CardEffectName.Effect1, 1);
@@ -66,6 +66,10 @@ public class GameController : MonoBehaviour {
 			CardFactory.Instance.CreateHandCard(c, p2);
 			Debug.Log("P2 Draw");
 		}
+	}
+
+	public void OnClickPlayFromHand () {
+		
 	}
 		
 }

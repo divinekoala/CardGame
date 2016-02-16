@@ -54,10 +54,5 @@ public class Game {
 			return false;
 		}
 	}
-
-	public void MoveCardToGraveyard (GameCard card, Player currentPlayer) {
-		currentPlayer.RemoveFromBoard(card);
-		currentPlayer.PutCardInGraveyard(card.GetCard());
-	}
 		
 }
